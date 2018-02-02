@@ -54,8 +54,8 @@ let transporter = nodemailer.createTransport({
 	secure: false,
 	port: 25,
 	auth:{
-		user:'imokoena268@gmail.com',
-		password: 'LightYagami45',
+		user:'testingNode@gmail.com',
+		password: 'password',
 	},
 	tls: {
 		rejectUnauthorized: false
@@ -63,7 +63,7 @@ let transporter = nodemailer.createTransport({
 });
 
 let HelperOptions = {
-	from: '"isaacwagithub" <imokoena268@gmail.com>',
+	from: '"isaacwagithub" <testingNode@gmail.com>',
 	to: 'imokoena268@gmail.com',
 	subject: 'Hello From Nodemailer',
 	text: 'Wow this tutorial is amazing'	
