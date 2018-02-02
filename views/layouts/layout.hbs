@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login-App</title>
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/style.css" rel="stylesheet">
+	<!-- jQuery library for javascript -->
+	<script type="text/javascript" src="./javascripts/bootstrap/jQuery-3.2.1.min.js"></script>
+	<!-- Socket library for javascript -->
+	<script type="text/javascript" src="./javascripts/socket.io.js"></script>
+	<script type="text/javascript" src="./js/build.js"></script>
+</head>
+<body>		
+    <header class="header clearfix">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+			<div class="container">
+					<h1 class="text=muted h2-bg"><strong>My App</strong></h1>
+				<button class="navbar-toggler" data-toggle="collapse" data-target="navbarCollapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a href="/" class="navbar-brand">Home</a>
+						</li>
+						<li class="nav-item">
+							<a href="/registration" class="navbar-brand">Register</a>
+						</li>
+						<li class="nav-item">
+							<a href="/login" class="navbar-brand">Login</a>
+						</li>
+						<li class="nav-item">
+							<a href="/" class="navbar-brand">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>	
+		</nav> 
+    </header>	
+    <div class="container">
+		{{{body}}}
+	</div> 
+	<hr class="featurette-divider">
+	<div class="container">	
+		<footer class="top-margin">
+			<p>&copy; Login App 2018</p>
+		</footer>	
+    </div><!-- /container -->	  
+     
+</body>
+</html>

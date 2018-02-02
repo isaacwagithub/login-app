@@ -1,0 +1,25 @@
+<div class="center-div col-lg-4 body-margin-top">
+	<h2 class="page-header">Account Login</h2>
+	{{#if title}}
+			<p class="alert alert-success">{{ title }}</p>
+	{{/if}}
+	
+	<form method="post" action="/users/login" class="dark-color">
+		<div class="form-group">
+			<label class="primary">Username</label>
+			<input type="text" class="form-control" placeholder="Username">
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-lg-4">
+					<label>Password</label>
+				</div>
+				<div class="col-lg-8">
+					<label><a href="/forgot-password">Forgot Password?</a></label>
+				</div>
+			</div>	
+			<input type="password" class="form-control" placeholder="Password">
+		</div>
+		<button type="submit" class="btn btn-default btn-primary">Submit</button>
+	</form>
+</div>	

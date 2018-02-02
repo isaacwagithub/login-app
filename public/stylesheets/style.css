@@ -1,0 +1,54 @@
+body{
+	background:url('../images/Hdrangeas.jpg') no-repeat;
+	background-position:center;
+	background-size:cover;
+	width:100%;
+}
+.navbar{
+	border-bottom: #008ed6 3px solid;
+	opacity: .9;
+}
+.dark-color{
+	color: black;
+	
+}
+.h2-bg{
+	color: white;
+}
+.featurette-divider{
+	margin-top:50px;
+}
+.top-margin{
+	margin-top:20px;
+}
+.center-div{
+	width:60%;
+	margin:70px auto;
+}
+.opacity-form{
+	opacity:.9;
+}
+
+
+.image-section{
+	background: url(../images/hem.jpg) no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 500px;
+}
+.show-border{
+	border:2px solid blue;
+	width:100%;
+	padding:0;
+	margin:0;
+}
+.container-width{
+	margin:0;
+	width:100%;
+}
+.body-margin-top{
+	clear:both;
+	margin-top:100px;
+	width:100%;
+}

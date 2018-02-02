@@ -1,0 +1,37 @@
+<div class="body-margin-top">
+	{{#if title}}
+		<h2 class="dark-color top-margin">{{title}}</h2>
+	{{/if}}	
+	{{#if errors}}
+		{{#each errors}}
+			<div class="alert alert-danger">{{msg}}</div>
+		{{/each}}
+	{{/if}}
+
+	<form method="post" action="/users/register" class="dark-color">
+		<div class="form-group">
+			<label class="display-12">Name</label>
+			<input type="text" class="form-control opacity-form" name="name" placeholder="Name">
+		</div>
+		<div class="form-group">
+			<label>Username</label>
+			<input type="text" class="form-control opacity-form" name="username" placeholder="Username">
+		</div>
+		<div class="form-group">
+			{{#if error}}
+				<p class="alert alert-danger">{{error}}</p>
+			{{/if}}
+			<label>Email</label>
+			<input type="text" class="form-control opacity-form" name="email" placeholder="Email">
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="form-control opacity-form" name="password" placeholder="Password">
+		</div>
+		<div class="form-group">
+			<label>Confirm Password</label>
+			<input type="password" class="form-control opacity-form" name="password2" placeholder="Confirm Password">
+		</div>
+		<button type="submit" class="btn btn-default btn-primary">Submit</button>
+	</form>
+</div>	
