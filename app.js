@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var hbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
+var keys = require('./keys');
 
 //Authentication packages
 var session = require('express-session');
@@ -34,15 +35,15 @@ app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 var options = {
-	host: 'localhost',
-	user: 'root',
-	password: 'rootaccount',
-	database: 'userlogin'
+	host: keys.options.host,
+	user: keys.options.user,
+	password: keys.options.password,
+	database: keys.options.database
 };
 var sessionStore = new MySQLStore(options);
 
 app.use(session({
-	secret: 'cats and dogs',
+	secret: keys.sessionSecret.secret,
 	resave: false,
 	store: sessionStore,
 	saveUninitialized: true,
@@ -54,8 +55,8 @@ let transporter = nodemailer.createTransport({
 	secure: false,
 	port: 25,
 	auth:{
-		user:'testingNode@gmail.com',
-		password: 'password',
+		user:keys.auth.user,
+		password: keys.auth.password
 	},
 	tls: {
 		rejectUnauthorized: false
@@ -63,7 +64,7 @@ let transporter = nodemailer.createTransport({
 });
 
 let HelperOptions = {
-	from: '"isaacwagithub" <testingNode@gmail.com>',
+	from: '*isaacwagithub* <imokoena268@gmail.com',
 	to: 'imokoena268@gmail.com',
 	subject: 'Hello From Nodemailer',
 	text: 'Wow this tutorial is amazing'	
