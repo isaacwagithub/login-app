@@ -10,6 +10,8 @@ router.get('/', function(req, res) {
   res.render('homepage');
 });
 
+/* Login post. */
+router.post('/login',passport.authenticate('local'));
 router.post('/register', function(req, res, next) {
   //validation
   req.checkBody('name','Name is required').notEmpty();
@@ -75,6 +77,20 @@ router.post('/forgot', function (req, res, next){
 			errors: errors
 		});
 	}else{
+		const email = req.body.email;
+		//querying to see if email exists in the database
+		db.query('select username from users where email = ?',
+		[email],function(err, results, fields){
+			if(err){done(err)};
+			if(results.length==0){
+				console.log('Email does not exist');
+				res.render('forgot',{
+					title: 'Reseting Password Error',
+					error: 'No username exist with that email address'});
+			}else{
+				res.render('forgot',{title: 'Email was sent to you. Please go to your email to reset password'});
+			}
+		});
 		
 	}
 });//end of forgot post route
@@ -87,4 +103,16 @@ passport.serializeUser(function(user_id,done){
 passport.deserializeUser(function(user_id,done){
 	done(null,user_id);
 });
+
+function authenticationMiddleware(){
+	return (req, res, next) => {
+		console.log('request.session.passport.user: ${JSON.stringify(req.session.passport)}');
+			
+			if(req.isAuthenticated()) return next(
+			   );
+			
+			res.redirect('/login');	
+	}
+}
+
 module.exports = router;
